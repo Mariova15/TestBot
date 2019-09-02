@@ -1,5 +1,5 @@
 # bot.py
-import requests  
+import requests
 import os
 from flask import Flask, request
 # Add your telegram token as environment variable
@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['POST'])
-def main():  
+def main():
     data = request.json
 
     print(data)  # Comment to hide what Telegram is sending you
@@ -19,7 +19,7 @@ def main():
 
     json_data = {
         "chat_id": chat_id,
-        "text": message,
+        "text": "Piano piano si arriva lontano",
     }
 
     message_url = BOT_URL + 'sendMessage'
@@ -28,6 +28,6 @@ def main():
     return ''
 
 
-if __name__ == '__main__':  
+if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
