@@ -15,11 +15,21 @@ def main():
 
     print(data)  # Comment to hide what Telegram is sending you
     chat_id = data['message']['chat']['id']
-    message = data['message']['text']
+
+    randomNum = randrange(3)
+
+    message
+
+    if randomNum == 0:
+        message = "Piano piano si arriva lontano"
+    elif randomNum == 1:
+        message = "Yo trabaje en IBM y te digo que esto funciona"
+    elif randomNum == 2:
+        message = "Bien, tienes nivel"
 
     json_data = {
         "chat_id": chat_id,
-        "text": "Piano piano si arriva lontano",
+        "text": message,
     }
 
     message_url = BOT_URL + 'sendMessage'
