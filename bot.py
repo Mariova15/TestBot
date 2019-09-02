@@ -19,7 +19,7 @@ def main():
 
     randomNum = randint(0, 2)
 
-    message
+    message = ""
 
     if randomNum == 0:
         message = "Piano piano si arriva lontano"
