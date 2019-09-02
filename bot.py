@@ -2,6 +2,7 @@
 import requests
 import os
 from flask import Flask, request
+from random import randint
 # Add your telegram token as environment variable
 BOT_URL = f'https://api.telegram.org/bot{os.environ["BOT_KEY"]}/'
 
@@ -16,7 +17,7 @@ def main():
     print(data)  # Comment to hide what Telegram is sending you
     chat_id = data['message']['chat']['id']
 
-    randomNum = randrange(3)
+    randomNum = randint(0, 2)
 
     message
 
