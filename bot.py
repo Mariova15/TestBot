@@ -1,6 +1,7 @@
 # bot.py
 import requests
 import os
+import base64
 from flask import Flask, request
 from random import randint
 # Add your telegram token as environment variable
@@ -23,7 +24,7 @@ def main():
 
     json_data = {
         "chat_id": chat_id,
-        "audio": file.read(),
+        "audio": base64.b64encode(file.read()),
     }
 
     message_url = BOT_URL + 'sendAudio'
