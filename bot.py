@@ -18,7 +18,7 @@ def main():
     chat_id = data['message']['chat']['id']
 
     randomNum = randint(0, 2)
-
+/*
     message = ""
 
     if randomNum == 0:
@@ -32,8 +32,20 @@ def main():
         "chat_id": chat_id,
         "text": message,
     }
+*/
 
-    message_url = BOT_URL + 'sendMessage'
+    file = open("download.png", 'rb')
+
+    json_data = {
+        "chat_id": chat_id,
+        "audio": file.read(),
+    }
+
+
+
+    //message_url = BOT_URL + 'sendMessage'
+
+    message_url = BOT_URL + 'sendAudio'
     requests.post(message_url, json=json_data)
 
     return ''
