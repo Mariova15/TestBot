@@ -17,7 +17,7 @@ def main():
     print(data)  # Comment to hide what Telegram is sending you
     chat_id = data['message']['chat']['id']
 
-    file = open("download.png", 'rb')
+    file = open("anticuao.mp3", 'rb')
 
     print(file.read())
 
