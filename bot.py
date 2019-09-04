@@ -1,8 +1,6 @@
 # bot.py
 import requests
 import os
-import base64
-import json
 from flask import Flask, request
 from random import randint
 # Add your telegram token as environment variable
@@ -19,17 +17,24 @@ def main():
     print(data)  # Comment to hide what Telegram is sending you
     chat_id = data['message']['chat']['id']
 
+    randomNum = randint(0, 2)
+
+    message = ""
+
+    if randomNum == 0:
+        message = "Piano piano si arriva lontano"
+    elif randomNum == 1:
+        message = "Yo trabaje en IBM y te digo que esto funciona"
+    elif randomNum == 2:
+        message = "Bien, tienes nivel"
+
     json_data = {
         "chat_id": chat_id,
+        "text": message,
     }
 
-    files = {
-         'json': (None, json.dumps(json_data), 'application/json'),
-         'file': (open('anticuao.mp3', 'rb'), 'audio/mp3')
-    }
-
-    message_url = BOT_URL + 'sendAudio'
-    requests.post(message_url, files=files)
+    message_url = BOT_URL + 'sendMessage'
+    requests.post(message_url, json=json_data)
 
     return ''
 
