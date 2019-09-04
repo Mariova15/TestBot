@@ -22,11 +22,10 @@ def main():
 
     json_data = {
         "chat_id": chat_id,
-        "audio": ('anticuao.mp3', open('anticuao.mp3', 'rb'), "multipart/form-data"),
     }
 
     message_url = BOT_URL + 'sendAudio'
-    requests.post(message_url, files=json_data)
+    requests.post(message_url, json=json_data, files=open('anticuao.mp3', 'rb'))
 
     return ''
 
