@@ -18,11 +18,12 @@ def main():
     print(data)  # Comment to hide what Telegram is sending you
     chat_id = data['message']['chat']['id']
 
-    with open("anticuao.mp3", 'rb') as file:
-        json_data = {
-            "chat_id": chat_id,
-            "audio": base64.b64encode(file.read()),
-        }
+    file = open('anticuao.mp3', 'rb')
+
+    json_data = {
+        "chat_id": chat_id,
+        "audio": ('anticuao.mp3', file.read()),
+    }
 
     message_url = BOT_URL + 'sendAudio'
     requests.post(message_url, json=json_data)
