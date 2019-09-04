@@ -22,7 +22,7 @@ def main():
 
     json_data = {
         "chat_id": chat_id,
-        "audio": (file, "multipart/form-data"),
+        "audio": ('anticuao.mp3', open('anticuao.mp3', 'rb'), "multipart/form-data"),
     }
 
     message_url = BOT_URL + 'sendAudio'
