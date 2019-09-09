@@ -20,7 +20,7 @@ bot.on('message', function (msg) {
 
     
 
-    switch (Math.round(Math.random() * 3)) {
+    switch (Math.round(Math.random() * 4)) {
         case 0:
             bot.sendMessage(msg.chat.id, "Piano piano si arriva lontano");
             break;
@@ -29,6 +29,9 @@ bot.on('message', function (msg) {
             break;
         case 2:
             bot.sendMessage(msg.chat.id, "Bien, tienes nivel");
+            break;
+        case 3:
+            bot.sendAudio(msg.chat.id, "noconfiar.mp3");
             break;
       }
 
