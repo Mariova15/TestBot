@@ -1,5 +1,5 @@
 var  env = process.env.BOT_KEY;
-var  token = '<${env}>';
+var  token = '${env}';
 
 var  Bot = require('node-telegram-bot-api'),
   bot = new Bot(token, { polling: true });
