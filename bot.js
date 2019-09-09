@@ -18,9 +18,7 @@ const bot = new TelegramBot(token, {
 
 bot.on('message', function (msg) {
 
-    
-
-    switch (Math.round(Math.random() * 4)) {
+    switch (Math.round(Math.random() * 6)) {
         case 0:
             bot.sendMessage(msg.chat.id, "Piano piano si arriva lontano");
             break;
@@ -32,6 +30,12 @@ bot.on('message', function (msg) {
             break;
         case 3:
             bot.sendAudio(msg.chat.id, "noconfiar.mp3");
+            break;
+        case 4:
+            bot.sendAudio(msg.chat.id, "anticuao.mp3");
+            break;
+        case 5:
+            bot.sendAudio(msg.chat.id, "responsive.mp3");
             break;
       }
 
